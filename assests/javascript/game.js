@@ -103,13 +103,13 @@ $( document ).ready(function() {
  */
  function setOptions(playerType){
   var html = "<div id='button_div'><button class='btn-primary' id='paper'>"+
-              "<img src='assets/images/paper.png'"+
+              "<img src='assests/images/paper.png'"+
               " class='images'></button>" + 
               "<button class='btn-primary' id='rock'>"+
-              "<img src='assets/images/rock.png'"+
+              "<img src='assests/images/rock.png'"+
               " class='images'></button>" + 
               "<button class='btn-primary' id='scissors'>"+
-              "<img src='assets/images/scissors.png'"+
+              "<img src='assests/images/scissors.png'"+
               " class='images'></button></div>";
   if(playerType === "player"){
     $("#player1").append(html);
