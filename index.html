@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>RPS Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assests/css/style.css">
+</head>
+<body>
+<!-- Heading of the Game -->
+
+<div class="container">
+
+	<div class="jumbotron">
+		<h1 class="title">
+			Rock Paper Scissors
+		</h1>
+	</div>
+
+<!-- Input form Fields  -->
+
+	<form class="form-inline">
+	  <div class="form-group">
+	    <label for="text"></label>
+	    <input type="text" class="form-control" id="player-name" placeholder="Name">
+  	  </div>
+  	  	<button type="button" class="btn btn-success" id="start-button">Add Player</button>
+  	  	<button type="button" class="btn btn-success" id="reset-button">Reset Game</button>
+    </form>
+		<!-- <button class="btn-primary" data-img=""assets/images/paper.png""><img src="assets/images/paper.png" class="images" ></button> -->
+		
+<!-- Players Information -->
+
+	<div class="row players">
+	  <div class="col-md-4 player1" id="player1"><h2 id="title1">Waiting for Player1</h2></div>
+	  <div class="col-md-4 results" id="results"><h2 id="title">Results</h2></div>
+	  <div class="col-md-4 player2" id="player2"><h2 id="title2">Waiting for Player2</h2></div>
+	</div>
+
+<!-- Comments Section -->
+
+	<div class="form-group comment">
+	  <label for="comment">Comments:</label>
+	  <textarea class="form-control" rows="5" id="comment"></textarea>
+		  <form class="form-inline">
+		  <div class="form-group">
+		   	    <input type="text" class="form-control" id="sendtext" >
+	  	  </div>
+		 <button type="submit" class="btn btn-success" id="send-button">Send</button>	  
+	</div>
+</div>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="js/main.js"></script> -->
+	<script type="text/javascript" src="assests/javascript/game.js"></script>
+</body>
+</html>
