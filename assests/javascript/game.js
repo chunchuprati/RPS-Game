@@ -55,6 +55,7 @@ $( document ).ready(function() {
 
   database.ref().remove();
   $("#player-name").val('');
+  $("#comment").val('');
   renderDefaultUI();
  });
 
@@ -92,8 +93,17 @@ $( document ).ready(function() {
  * Event handler for capturing the comments and subsequently to display in the "Comments" box
  */
  $("#send-button").on("click", function(event){
-  //database.ref("Chatroom")
+  var msgText = $("#sendtext").val();
+  database.ref("Chatroom").push({
+    message:msgText 
+  });
  });
+
+ database.ref("Chatroom").on('child_added', function(snapshot){
+  //alert(snapshot.val().message);
+  $("#comment").append(snapshot.val().message+"\n");
+ });
+
 
  /*
  * This function displays the options to choose for individual players
@@ -103,13 +113,13 @@ $( document ).ready(function() {
  */
  function setOptions(playerType){
   var html = "<div id='button_div'><button class='btn-primary' id='paper'>"+
-              "<img src='assests/images/paper.png'"+
+              "<img src='assets/images/paper.png'"+
               " class='images'></button>" + 
               "<button class='btn-primary' id='rock'>"+
-              "<img src='assests/images/rock.png'"+
+              "<img src='assets/images/rock.png'"+
               " class='images'></button>" + 
               "<button class='btn-primary' id='scissors'>"+
-              "<img src='assests/images/scissors.png'"+
+              "<img src='assets/images/scissors.png'"+
               " class='images'></button></div>";
   if(playerType === "player"){
     $("#player1").append(html);
